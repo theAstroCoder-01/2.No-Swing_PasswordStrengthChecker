@@ -25,7 +25,7 @@ public class PasswordStrengthChecker {
 		boolean hasLowerCase = false;
 		boolean hasDigit = false;
 		boolean hasSpecial = false;
-		String speialCharacters = "!@#$%^&*()_-+=<>?";
+		String specialCharacters = "!@#$%^&*()_-+=<>?";
 		
 		//Check length
 		if(password.length() >= lengthCriteria) {
@@ -38,12 +38,12 @@ public class PasswordStrengthChecker {
 					hasLowerCase = true;
 				} else if (Character.isDigit(c)) {
 					hasDigit = true;
-				} else if (speialCharacters.contains(String.valueOf(c))) {
+				} else if (specialCharacters.contains(String.valueOf(c))) {
 					hasSpecial = true;
 				}
 			}
 			
-			//Analize password strength
+			//Analyze password strength
 			if(hasUpperCase & hasLowerCase & hasDigit & hasSpecial) {
 				return "It is strong password!";
 			} else {
